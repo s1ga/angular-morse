@@ -1,0 +1,129 @@
+// TODO: fix mobile styles and break in output card
+.app-container {
+  width: 90%;
+  margin: 0 auto;
+
+  & .mat-divider {
+    margin: 24px 0;
+  }
+}
+
+.tab {
+  margin-top: 16px;
+}
+
+.icon {
+  cursor: pointer;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 24px;
+
+  &-container {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 600px;
+  }
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  column-gap: 16px;
+}
+
+.title {
+  text-align: center;
+  font-weight: bold;
+  padding-top: 24px;
+}
+
+.centered {
+  text-align: center;
+}
+
+.input {
+  width: 100%;
+
+  &_morse .mat-mdc-form-field-input-control.mat-mdc-form-field-input-control {
+    font-size: 32px;
+    line-height: 2rem;
+
+    &::placeholder {
+      font-size: 16px;
+    }
+  }
+}
+
+.output {
+  min-height: 60px;
+  height: 100%;
+  margin-bottom: 24px;
+  font-size: 32px;
+  text-align: center;
+  line-height: 2rem;
+
+  &__letter {
+    margin-left: 4px;
+
+    &:nth-child(2n) {
+      color: orange;
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    border-radius: 4px;
+    padding: 24px;
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+
+    & .copy-btn:not(:disabled) {
+      background-color: #000;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      column-gap: 8px;
+    }
+  }
+}
+
+.audio {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.volume {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  & .mat-mdc-slider {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+.visual {
+  background-color: #eee;
+  border-radius: 8px;
+  border: 1px solid #ddf;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  font-size: 18px;
+}

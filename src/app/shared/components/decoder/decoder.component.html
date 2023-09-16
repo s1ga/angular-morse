@@ -1,0 +1,32 @@
+<div class="form-container form">
+  <mat-form-field class="input input_morse">
+    <mat-label>Morse code decoder</mat-label>
+    <textarea [formControl]="textControl" matInput placeholder="Example: . -..- .- -- .--. .-.. .  - . -..- -"></textarea>
+  </mat-form-field>
+
+  <div class="actions">
+    <button (click)="fromMorse()" mat-flat-button color="primary">Translate</button>
+    <button (click)="clear()" mat-stroked-button>Clear</button>
+    <span
+      class="material-icons icon" 
+      matTooltip="Please, add space between each symbol in morse representation to correctly parse your message. 
+      Two or more spaces will be treated just as a space between words." 
+      matTooltipPosition="above"
+    >
+      info
+    </span>
+  </div>
+
+  <section class="output__container">
+    <h2 class="mat-h1">Translation:</h2>
+    <output class="output">
+      {{ decodedText() }}
+    </output>
+    <button (click)="textToCopy.set(decodedText())" mat-flat-button class="copy-btn">
+      <span class="material-icons">
+        content_copy
+      </span>
+      Copy text
+    </button>
+  </section>
+</div>

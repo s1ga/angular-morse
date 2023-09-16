@@ -1,0 +1,26 @@
+<div class="form-container form">
+  <mat-form-field class="input">
+    <mat-label>Translate your text</mat-label>
+    <textarea [formControl]="textControl" matInput placeholder="Example: You are a fantastic person!"></textarea>
+  </mat-form-field>
+
+  <div class="actions">
+    <button (click)="toMorse()" mat-flat-button color="primary">Translate</button>
+    <button (click)="clear()" mat-stroked-button>Clear</button>
+  </div>
+
+  <section class="output__container">
+    <h2 class="mat-h1">Translation:</h2>
+    <output class="output">
+      <ng-container *ngFor="let char of encodedTextArray()">
+        <span class="output__letter">{{ char }}</span>
+      </ng-container>
+    </output>
+    <button (click)="setTextToCopy()" mat-flat-button class="copy-btn">
+      <span class="material-icons">
+        content_copy
+      </span>
+      Copy text
+    </button>
+  </section>
+</div>

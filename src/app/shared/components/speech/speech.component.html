@@ -1,0 +1,29 @@
+<section class="audio">
+  <h2 class="centered">Listen to your Morse message</h2>
+
+  <div class="visual">
+    <ng-container *ngIf="currentChar() as text; else noText">{{ text }}</ng-container>
+    <ng-template #noText>Visual orientation</ng-template>
+  </div>
+  
+  <div class="volume">
+    <div>Volume: {{ slider.value }}%</div>
+    <mat-slider
+      class="example-margin"
+      [max]="100"
+      [min]="0"
+      [step]="1"
+    >
+      <input matSliderThumb [ngModel]="volume" (ngModelChange)="onVolumeChange($event)" #slider>
+    </mat-slider>
+  </div>
+  
+  <div class="actions">
+    <button [disabled]="!text()?.length || isPlaying()" matTooltip="Click to play" matTooltipPosition="above" (click)="playAudio()" class="material-icons icon">
+      play_arrow
+    </button>
+    <button (click)="toggleMute()" class="material-icons icon" [matTooltip]="'Click to ' + (volume === 0 ? 'umnute' : 'mute')" matTooltipPosition="above">
+      {{ volume === 0 ? 'volume_up' : 'volume_off' }}
+    </button>
+  </div>
+</section>
